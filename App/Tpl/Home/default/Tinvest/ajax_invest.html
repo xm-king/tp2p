@@ -1,0 +1,18 @@
+<form class="ajax-invest" method="post" name="investForm" id="investForm" action="__URL__/investmoney">
+	<input type="hidden" name="T_borrow_id" id="T_borrow_id" value="{$vo.id}" />
+	<input type="hidden" name="transfer_invest_num" id="transfer_invest_num" value="{$num}" />
+	<input type="hidden" name="per_transfer" id="per_transfer" value="{$vo.per_transfer}" />
+	<input type="hidden" name="transfer_invest_month" id="transfer_invest_month" value="{$vo.borrow_duration}" />
+    <ul class="item">
+		<li>
+			<div>
+			<a href="javascript:void(0);" class="center" onclick="T_PostData({$num},{$vo.borrow_duration},{$vo.per_transfer})">立即投资</a>
+			</div>
+		</li>
+	</ul>
+</form>
+<script type="text/javascript">
+T_transfer_num = {$vo['transfer_total']-$vo['transfer_out']};
+T_month_max = {$vo.borrow_duration};
+showTMoney({$vo.borrow_interest_rate},{$vo.reward_rate},{$vo.increase_rate},{$vo.borrow_duration});
+</script>
